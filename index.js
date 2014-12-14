@@ -74,6 +74,24 @@ server.route({
     }
 });
 
+server.route({
+    method: 'GET',
+    path: '/getScore',
+    handler: function(request, reply) {
+
+        reply(getScore());
+    }
+});
+
+function getScore() {
+    var ws = goController.getWhitePlayerScore();
+    var bs = goController.getBlackPlayerScore();
+    return {
+        white: ws,
+        black: bs
+    };
+}
+
 server.start(function() {
     console.log('Server running at:', server.info.uri);
 });
