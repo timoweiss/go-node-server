@@ -9,9 +9,16 @@ server.connection({
     port: 3000
 });
 
+var io = require('socket.io')(server.listener);
+
 // GET     /                           controllers.Application.index()
 
 // GET     /connectWebSocket           controllers.Application.connectWebSocket()
+
+io.on('connection', function() {
+    console.log('new user');
+    io.emit('new-user');
+});
 
 var game = null;
 server.route({
@@ -19,7 +26,7 @@ server.route({
     path: '/',
     handler: function(request, reply) {
         goController.createField(9);
-        reply('Hello, world!');
+        reply('<html><head><script src="https://cdn.socket.io/socket.io-1.2.1.js"></script></head><body><script>var socket = io();</script></body></html>');
     }
 });
 
