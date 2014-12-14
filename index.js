@@ -12,9 +12,6 @@ server.connection({
 // GET     /                           controllers.Application.index()
 // GET     /getStatus                  controllers.Application.getStatus()
 // GET     /getScore                   controllers.Application.getScore()
-// GET     /getGameField               controllers.Application.getGameField()
-// GET     /getNext                    controllers.Application.getNext()
-// GET     /operate                    controllers.Application.operate()
 
 // GET     /connectWebSocket           controllers.Application.connectWebSocket()
 
@@ -57,6 +54,14 @@ server.route({
     path: '/pass',
     handler: function(request, reply) {
         reply(goController.pass());
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/getNext',
+    handler: function(request, reply) {
+        reply(goController.getNext());
     }
 });
 
