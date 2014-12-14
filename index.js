@@ -10,8 +10,6 @@ server.connection({
 });
 
 // GET     /                           controllers.Application.index()
-// GET     /getStatus                  controllers.Application.getStatus()
-// GET     /getScore                   controllers.Application.getScore()
 
 // GET     /connectWebSocket           controllers.Application.connectWebSocket()
 
@@ -83,6 +81,15 @@ server.route({
     }
 });
 
+server.route({
+    method: 'GET',
+    path: '/getStatus',
+    handler: function(request, reply) {
+
+        reply(getStatus());
+    }
+});
+
 function getScore() {
     var ws = goController.getWhitePlayerScore();
     var bs = goController.getBlackPlayerScore();
@@ -90,6 +97,13 @@ function getScore() {
         white: ws,
         black: bs
     };
+}
+
+function getStatus() {
+    var status = {};
+    status.next = goController.getNext();
+    status.score = getScore();
+    return status;
 }
 
 server.start(function() {
