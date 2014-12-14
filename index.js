@@ -55,6 +55,14 @@ server.route({
     }
 });
 
+server.route({
+    method: 'POST',
+    path: '/pass',
+    handler: function(request, reply) {
+        reply(goController.pass());
+    }
+});
+
 server.start(function() {
     console.log('Server running at:', server.info.uri);
 });
