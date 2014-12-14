@@ -20,6 +20,10 @@ io.on('connection', function() {
     io.emit('new-user');
 });
 
+goController.gameField.on('setStone', function(cell) {
+    io.emit('setStone', cell);
+});
+
 var game = null;
 server.route({
     method: 'GET',
