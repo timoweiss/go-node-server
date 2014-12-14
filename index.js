@@ -60,6 +60,15 @@ server.route({
     }
 });
 
+
+server.route({
+    method: 'GET',
+    path: '/operate',
+    handler: function(request, reply) {
+        reply(goController.operate());
+    }
+});
+
 server.start(function() {
     console.log('Server running at:', server.info.uri);
 });
