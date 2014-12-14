@@ -18,9 +18,6 @@ server.connection({
 
 // GET     /connectWebSocket           controllers.Application.connectWebSocket()
 
-// POST    /setStone                   controllers.Application.setStone()
-// POST    /createNewField/:size       controllers.Application.createNewField(size)
-// POST    /pass                       controllers.Application.pass()
 var game = null;
 server.route({
     method: 'GET',
@@ -32,7 +29,7 @@ server.route({
 });
 
 server.route({
-    method: 'GET',
+    method: 'POST',
     path: '/createNewField/{size}',
     handler: function(request, reply) {
         var size = encodeURIComponent(request.params.size);
