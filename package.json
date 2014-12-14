@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/timoweiss/go-node-server/issues"
   },
-  "homepage": "https://github.com/timoweiss/go-node-server"
+  "homepage": "https://github.com/timoweiss/go-node-server",
+  "dependencies": {
+    "hapi": "^8.0.0"
+  }
 }
