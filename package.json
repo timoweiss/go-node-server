@@ -1,24 +1,24 @@
 {
-  "name": "go-node-server",
-  "version": "0.0.1",
-  "description": "Server module to expose game features from go-node",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/timoweiss/go-node-server"
-  },
-  "author": "Timo Weiß",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/timoweiss/go-node-server/issues"
-  },
-  "homepage": "https://github.com/timoweiss/go-node-server",
-  "dependencies": {
-    "go-node": "0.0.1",
-    "hapi": "^8.0.0",
-    "socket.io": "^1.2.1"
-  }
+    "name": "go-node-server",
+    "version": "0.0.1",
+    "description": "Server module to expose game features from go-node",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/timoweiss/go-node-server"
+    },
+    "author": "Timo Weiß",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/timoweiss/go-node-server/issues"
+    },
+    "homepage": "https://github.com/timoweiss/go-node-server",
+    "dependencies": {
+        "go-node": "0.0.*",
+        "hapi": "^8.0.0",
+        "socket.io": "^1.2.1"
+    }
 }
